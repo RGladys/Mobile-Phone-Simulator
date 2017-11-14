@@ -1,0 +1,114 @@
+#iconMessagesCount {
+  display: none;
+  width: 25px;
+  height: 25px;
+  background: #e8e6d7;
+  border: 1px solid darken(#e8e6d7, 50%);
+  border-radius: 20px;
+  float: right;
+  margin-top: -10px;
+  margin-right: -5px;
+  text-align: center;
+  line-height: 25px;
+  font-family: Arial;
+  font-size: 18px;
+  color: darken(#e8e6d7, 80%)
+}
+
+.message {
+  width: 285px;
+  height: 50px;
+  border-bottom: 1px solid darken($basicColor, 20%);
+  h2 {
+    font-size: 20px;
+    font-family: "Open Sans Condensed";
+    line-height: 50px;
+    float: left
+  }
+}
+
+.userStatus {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  float: right;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.msgCount {
+  display: none;
+  float: right;
+  margin-right: 20px;
+  margin-top: 12px;
+  border-radius: 3px;
+  border: 1px solid darken(#d8dbba, 20%);
+  background: #d8dbba
+}
+
+.messageFull {
+  width: 285px;
+  height: 502px;
+  background: $basicColor;
+  display: none
+}
+
+.messageOutput {
+  width: 285px;
+  margin-top: 40px;
+  z-index: 0;
+  position: absolute;
+  font-family: "Open Sans Condensed"
+}
+
+.messageInput {
+  width: 240px;
+  height: 70px;
+  resize: none;
+  position: absolute;
+  bottom: 26px;
+  z-index: 10;
+}
+
+.messageName {
+  width: 285px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  background: darken($basicColor, 5%);
+  border-bottom: 1px solid darken($basicColor, 20%);
+  z-index: 10;
+  h2 {
+    line-height: 40px;
+    font-size: 20px
+  }
+}
+
+.messageSend {
+  width: 45px;
+  height: 70px;
+  background-image: url("../images/icons/msgSend.png");
+  position: absolute;
+  bottom: 26px;
+  right: 0px;
+  z-index: 10;
+}
+
+.messageGiven, .messageReceived {
+  border-radius: 10px;
+  clear: both;
+  line-height: 30px;
+  padding: 3px
+}
+
+.messageReceived {
+  float: left;
+  background: #e0dec7;
+  margin: 2px 0 0 2px;
+}
+
+.messageGiven {
+  float: right;
+  background: lightblue;
+    margin: 2px 5px 0 0;
+}

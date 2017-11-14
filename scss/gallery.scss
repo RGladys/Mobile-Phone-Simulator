@@ -1,0 +1,48 @@
+.galleryContainer {
+	width: 285px;
+	height: 120px;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-left: 2px;
+	margin-top: 2px
+}
+
+.galleryPhoto, .settingsPhoto {
+	width: 61px;
+	height: 61px;
+	margin: 4px;
+}
+
+#gallerySlider {
+	display: none;
+	position: absolute;
+	width: 285px;
+	height: 502px;
+	top: 0;
+	background-color: black
+}
+
+.galleryPhotoFull {
+	width: 285px;
+	height: 502px;
+}
+
+.galleryArrows {
+	display: none;
+	width: 36px;
+	height: 58px;
+	position: absolute;
+	bottom: 50px;
+	opacity: .5
+}
+
+#galleryPrev {
+	background-image: url("../images/icons/prev.png");
+	left: 80px;
+}
+
+#galleryNext {
+	background-image: url("../images/icons/next.png");
+	right: 80px;
+}

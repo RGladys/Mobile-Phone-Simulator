@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile Phone Simulator by Radoslaw Gladys</title>
+<meta charset="UTF-8">
+<meta lang="en">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Caveat+Brush|Libre+Franklin" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/TrackballControls.js"></script>
+<script src="js/JSONLoader.js"></script>
+<script src="js/CSS3DRenderer.js"></script>
+<script src="js/jquery-min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/d3.min.js"></script>
+</head>
+
+<body>
+<!--Containers for 3d-->
+<div id=wrapper>
+	<div id=login>
+		<h1>Enter your nickname</h1>
+		<div id="loginForm">
+			<textarea id=loginText maxlength=20></textarea>
+			<div id=loginButton>Send</div>
+			<h2 id=loginMessageTaken>This nick is already taken</h2>
+			<h2 id=loginMessageInvalid>This nick is not correct</h2>
+		</div>
+	</div>
+	<canvas id=canvas></canvas>
+</div>
+
+<!--Screen-->
+<div id=screen>
+<div id=bar>
+	<p id=barTime>10:37</p>
+	<div id=barStats></div>
+	<div id=msg></div>
+</div>
+
+<!--Start screen-->
+	<div id=start>
+		<div id=startClock>
+			<h1 id=startHour></h1>
+			<p id=startDay></p>
+		</div>
+		<p id=startInfo>Drag the screen to unlock...</p>
+		<svg id=startSVG></svg>
+	</div>
+
+<!--Main menu-->
+	<div id=menu>
+		<div id=menuFlex>
+			<div class=icon id=iconBall data=game></div>
+			<div class=icon id=iconCalculator data=calculator></div>
+			<div class=icon id=iconNotes data=notes></div>
+			<div class=icon id=iconGallery data=gallery></div>
+			<div class=icon id=iconSnake data=snake></div>
+		</div>
+		<div id=menuFlexBottom>
+			<div class=icon id=iconMessages data=messages>
+				<p id=iconMessagesCount></p>
+			</div>
+			<div class=icon id=iconSettings data=settings></div>
+		</div>
+	</div>
+
+<!--Messages-->
+	<div class=app id=messages>
+		<div id=messagesContainer></div>
+	</div>
+
+<!--Ball game-->
+	<canvas id=game></canvas>
+
+<!--Calculator-->
+	<div id=calculator>
+		<div id=calcDisplay></div>
+		<div id=calcContainer>
+			<div class=calcButton id=calcClear>CA</div>
+			<div class=calcButton id=calcClearLast>C</div>
+			<div class=calcButton id=calcDivide data-type=calcAction>/</div>
+			<div class=calcButton id=calcMultiply data-type=calcAction>*</div>
+			<div class=calcButton id=calc7 data=7>7</div>
+			<div class=calcButton id=calc8 data=8>8</div>
+			<div class=calcButton id=calc9 data=9>9</div>
+			<div class=calcButton id=calcSub data-type=calcAction>-</div>
+			<div class=calcButton id=calc4 data=4>4</div>
+			<div class=calcButton id=calc5 data=5>5</div>
+			<div class=calcButton id=calc6 data=6>6</div>
+			<div class=calcButton id=calcAdd data-type=calcAction>+</div>
+			<div class=calcButton id=calc1 data=1>1</div>
+			<div class=calcButton id=calc2 data=2>2</div>
+			<div class=calcButton id=calc3 data=3>3</div>
+			<div class=calcButton id=calcComa>.</div>
+			<div class=calcButton id=calc0 data=0>0</div>
+			<div class=calcButton id=calcResult>=</div>
+		</div>
+	</div>
+
+<!--Gallery-->
+	<div class=app id=gallery>
+		<div class=galleryContainer>
+			<div class=galleryPhoto id=gallery1 data=1></div>
+			<div class=galleryPhoto id=gallery2 data=2></div>
+			<div class=galleryPhoto id=gallery3 data=3></div>
+			<div class=galleryPhoto id=gallery4 data=4></div>
+			<div class=galleryPhoto id=gallery5 data=5></div>
+			<div class=galleryPhoto id=gallery6 data=6></div>
+			<div class=galleryPhoto id=gallery7 data=7></div>
+			<div class=galleryPhoto id=gallery8 data=8></div>
+		</div>
+		<div id=gallerySlider></div>
+		<div class=galleryArrows id=galleryPrev></div>
+		<div class=galleryArrows id=galleryNext></div>
+	</div>
+
+<!--Settings-->
+	<div class=app id=settings>
+		<div class=settingsMain id=settingsBg>Background</div>
+		<div class=settingsMain id=settingsSounds>Message sound</div>
+		<div class=settingsInnerMain id=settingsBgMain>
+			<div class=galleryContainer>
+				<div class=settingsPhoto id=settingBgGallery1 data=1></div>
+				<div class=settingsPhoto id=settingBgGallery2 data=2></div>
+				<div class=settingsPhoto id=settingBgGallery3 data=3></div>
+				<div class=settingsPhoto id=settingBgGallery4 data=4></div>
+				<div class=settingsPhoto id=settingBgGallery5 data=5></div>
+				<div class=settingsPhoto id=settingBgGallery6 data=6></div>
+				<div class=settingsPhoto id=settingBgGallery7 data=7></div>
+				<div class=settingsPhoto id=settingBgGallery8 data=8></div>
+			</div>
+		<div id=settingsBgPhoto>
+			<div id=settingsBgSet1 data=1>Set as lockscreen background</div>
+			<div id=settingsBgSet2 data=2>Set as menu background</div>
+		</div>
+		</div>
+		<div class=settingsInnerMain id=settingsSoundsMain>
+			<div class=settingsSound id=settingsSoundMarimba>Marimba</div>
+			<div class=settingsSound id=settingsSoundNone>None</div>
+		</div>
+	</div>
+
+<!--Notes-->
+	<div class=app id=notes>
+		<div id=notesHeader>
+			<h1>Notes</h1>
+			<div id=notesAdd></div>
+		</div>
+		<div id=notesContainer></div>
+		<div id=notesContainerFull></div>
+	</div>
+
+<!--Snake game-->
+	<div id=snake>
+	<div id=snakeMenu>
+		<div id=snakeImage></div>
+		<div id=snakePlay class=snakeBtn data=play1>Play</div>
+		<div id=snakeSettings class=snakeBtn data=settings>Settings</div>
+	</div>
+	<div id=snakeSettingsMenu>
+		<h1>Settings</h1>
+		<h2>Diffculty:</h2>
+		<div class="snakeDif snakeBtn" id=snakeHard data=hard></div><h3>Hard</h3>
+		<div class="snakeDif snakeBtn" id=snakeMedium data=medium></div><h3>Medium</h3>
+		<div class="snakeDif snakeBtn" id=snakeEasy data=easy></div><h3>Easy</h3>
+		<div class="snakeBtn snakeBtnEnd"  data=menu>Back</div>
+	</div>
+	<div id=snakeGame>
+		<div id=snakeEnd>
+			<h1>Game Over</h1>
+			<p>Score: <span class=snakeScore></span></p>
+			<div id=snakeEndBtns>
+				<div class="snakeBtn snakeBtnEnd" id=snakeEndPlay data=play>Play Again</div>
+				<div class="snakeBtn snakeBtnEnd" id=snakeEndMenu data=menu>Back to Menu</div>
+			</div>
+		</div>
+		<canvas id=snakeCanvas></canvas>
+		<p>Score: <span class=snakeScore>0</span></p>
+		<div id=snakeControls>
+			<div class=snakeCtr id=snakeLeft data=left></div>
+			<div id=snakeUpDown>
+				<div class=snakeCtr id=snakeUp data=up></div>
+				<div class=snakeCtr id=snakeDown data=down></div>
+			</div>
+			<div class=snakeCtr id=snakeRight data=right></div>
+		</div>
+	</div>
+	</div>
+
+	<div class=app id=music>
+
+	</div>
+
+</div>
+
+<script src="js/time-script.js"></script>
+<script src="js/script.js"></script>
+<script src="js/login-script.js"></script>
+<script src="js/messages-script.js"></script>
+<script src="js/websockets-controller-script.js"></script>
+<script src="js/screen-script.js"></script>
+<script src="js/game-script.js"></script>
+<script src="js/calc-script.js"></script>
+<script src="js/settings-script.js"></script>
+<script src="js/gallery-script.js"></script>
+<script src="js/snake-script.js"></script>
+<script src="js/notes-script.js"></script>
+<script src="js/site-script.js"></script>
+</body>
+</html>

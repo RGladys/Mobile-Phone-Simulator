@@ -1,0 +1,40 @@
+#calculator {
+	display: none;
+	width: 285px;
+	height: 502px;
+	background-color: $basicColor;
+	font-family: Arial
+}
+
+#calcDisplay {
+	width: 280px;
+	height: 182px;
+	line-height: 300px;
+	text-align: right;
+	font-size: 30px;
+	margin-right: 5px
+}
+
+#calcContainer {
+	width: 285px;
+	height: 320px;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-left: 3px
+}
+
+.calcButton {
+	text-align: center;
+	width: 65px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #d6d6d6;
+	border: 1px solid darkgrey;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+#calc0, #calcResult {
+	width: 134px
+}

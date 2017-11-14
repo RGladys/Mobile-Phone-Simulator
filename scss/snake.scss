@@ -1,0 +1,162 @@
+#snake {
+	display: none;
+	width: 285px;
+	height: 502px;
+	background: lightgreen;
+	font-family: Arial;
+	p {
+		font-size: 20px;
+		margin-left: 11px;
+		float: left
+	}
+}
+
+#snakeGame {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 285px;
+	height: 502px;
+	background-color: lightgreen
+}
+
+#snakeCanvas {
+	width: 260px;
+	height: 380px;
+	background-color: lightgrey;
+	margin: 20px 11px 11px 11px
+}
+
+#snakeImage {
+	width: 285px;
+	height: 280px;
+	background-image: url("../images/snake/snake.png");
+}
+
+#snakeSettingsMenu {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 285px;
+	height: 502px;
+	background: lightgreen;
+	h1 {
+		padding-top: 25px;
+		width: 285px;
+		text-align: center;
+	};
+	h2 {
+		width: 150px;
+		height: 30px;
+		margin-left: 5px;
+		padding-bottom: 10px
+	};
+	h3 {
+		margin-top: 6px;
+		margin-left: 40px
+	}
+}
+
+.snakeDif {
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	float: left;
+	margin: 6px 0 0 8px;
+}
+
+#snakeMedium {
+	background-color: red
+}
+
+#snakePlay, #snakeSettings {
+	width: 220px;
+	height: 50px;
+	background-color: green;
+	border: 2px solid black;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+	font-size: 30px;
+	line-height: 50px
+}
+#snakeControls {
+	float: right;
+	margin-right: 15px
+}
+
+#snakeLeft, #snakeRight {
+	width: 30px;
+	height: 62px;
+	float: left;
+	border: 1px solid black;
+}
+
+#snakeLeft {
+	background-image: url("../images/snake/left.png");
+}
+
+#snakeRight {
+	background-image: url("../images/snake/right.png");
+}
+
+#snakeDown {
+	width: 52px;
+	height: 31px;
+	background-image: url("../images/snake/down.png");
+}
+
+#snakeUp {
+	width: 52px;
+	height: 31px;
+	background-image: url("../images/snake/up.png");
+}
+
+#snakeUpDown {
+	width: 52px;
+	height: 62px;
+	float: left;
+	div {
+		width: 50px;
+		height: 30px;
+		border: 1px solid black
+	}
+}
+
+#snakeEnd {
+	display: none;
+	position: absolute;
+	left: 31px;
+	top: 80px;
+	width: 220px;
+	height: 180px;
+	background-color: black;
+	opacity: .8;
+	color: white;
+	text-align: center;
+	h1 {
+		margin-top: 10px;
+		opacity: 1
+	};
+	p {
+		position: absolute;
+		width: 220px;
+		margin-top: -10px;
+		opacity: 1
+	}
+}
+
+.snakeBtnEnd {
+	width: 200px;
+	height: 30px;
+	margin: auto;
+	border: 1px solid white;
+	text-align: center;
+	margin-top: 10px;
+	line-height: 30px;
+	opacity: 1
+}
+
+#snakeEndBtns {
+	margin-top: 20px
+}

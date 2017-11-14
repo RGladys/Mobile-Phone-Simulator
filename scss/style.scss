@@ -1,0 +1,558 @@
+body {
+	background-color: black;
+	-moz-user-select: none;
+	cursor: default;
+}
+
+canvas {
+	border: 3px solid white;
+	display: inline-block;
+	float: left;
+	width: 900px;
+	height: 700px;
+}
+
+#controls {
+	width: 320px;
+	height: 700px;
+	background-color: black;
+	display: inline-block;
+	border: 3px solid white;
+	border-left: none;
+	float: right
+}
+
+#ultraWrapper {
+	width: 1225px;
+	margin: auto;
+}
+
+#wrapper {
+	width: 1230px;
+	margin: auto;
+	margin-top: 50px
+}
+
+canvas {
+	border: 0
+}
+
+* {
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+}
+
+$basicColor: #ebebeb;
+
+#screen {
+	width: 285px;
+	height: 502px;
+	background-color: black;
+	font-size: 20px;
+	margin:0;
+	padding:0;
+	position: absolute
+}
+
+#bar {
+	width: 285px;
+	height: 25px;
+	background-color: black;
+	position: absolute;
+	z-index: 1;
+}
+
+#start {
+	width: 285px;
+	height: 502px;
+	position: absolute;
+	display: none;
+	overflow: none;
+	background-color: black;
+	background-image: url("../images/pictures/picture1.png");
+	z-index: 2
+}
+
+#startSVG {
+	position: absolute;
+	width: 285px;
+	height: 502px
+}
+
+#startClock {
+	position: absolute;
+	font-family: "Open Sans Condensed";
+	color: white;
+	h1 {
+		margin-top: 10px;
+		margin-left: 15px;
+		font-size: 100px;
+	};
+	p {
+		margin-top: -20px;
+		margin-left: 20px;
+		font-size: 25px
+	}
+}
+
+#startInfo {
+	position: absolute;
+	font-family: "Open Sans Condensed";
+	color: white;
+	font-size: 20px;
+	bottom: 30px;
+	left: 15px;
+	-webkit-animation: startAnim 2s infinite;
+	        animation: startAnim 2s infinite
+}
+
+@-webkit-keyframes startAnim {
+	0% {color: white}
+	50% {color: #bcbcbc}
+	100% {color: white}
+}
+
+@keyframes startAnim {
+	0% {color: white}
+	50% {color: #bcbcbc}
+	100% {color: white}
+}
+
+#menu {
+	width: 285px;
+	height: 502px;
+	display: none;
+	background-image: url("../images/pictures/picture2.png")
+}
+
+#menuFlex {
+	width: 285px;
+	height: 160px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	position: absolute;
+	top: 35px;
+	left: 9px
+}
+
+#menuFlexBottom {
+	width: 285px;
+	height: 80px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	bottom: 0px;
+	position: absolute
+}
+
+.icon {
+	width: 67px;
+	height: 70px;
+	background-repeat: no-repeat;
+	background-position: center
+}
+
+#iconInternet {
+	background-image: url("../images/icons/icon1.png");
+}
+
+#iconGallery {
+	background-image: url("../images/icons/icon2.png");
+}
+
+#iconCalculator {
+	background-image: url("../images/icons/icon3.png");
+}
+
+#iconTime {
+	background-image: url("../images/icons/icon4.png");
+}
+
+#iconSettings {
+	background-image: url("../images/icons/icon5.png");
+}
+
+#iconNotes {
+	background-image: url("../images/icons/icon6.png");
+}
+
+#iconMessages {
+	background-image: url("../images/icons/icon7.png");
+}
+
+#iconMusic {
+	background-image: url("../images/icons/icon8.png");
+}
+
+#iconBall {
+	background-image: url("../images/icons/icon9.png");
+}
+
+#iconSnake {
+	background-image: url("../images/icons/icon10.png")
+}
+
+#iconYoutube {
+	background-image: url("../images/icons/icon11.png")
+}
+
+.app {
+	display: none;
+	margin-top: 25px;
+	width: 285px;
+	height: 502px;
+	background: -webkit-gradient(linear, left top, left bottom, from($basicColor), to(darken($basicColor, 20%)));
+	background: -o-linear-gradient($basicColor, darken($basicColor, 20%));
+	background: linear-gradient($basicColor, darken($basicColor, 20%));
+	font-family: Arial;
+	position: absolute
+}
+
+.galleryContainer {
+	width: 285px;
+	height: 180px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	margin-left: 2px;
+	margin-top: 2px
+}
+
+.galleryPhoto, .settingsPhoto {
+	width: 61px;
+	height: 61px;
+	margin: 4px;
+}
+
+#gallerySlider {
+	display: none;
+	position: absolute;
+	width: 285px;
+	height: 502px;
+	top: 0;
+	background-color: black
+}
+
+.galleryPhotoFull {
+	width: 285px;
+	height: 502px;
+}
+
+.galleryArrows {
+	display: none;
+	width: 36px;
+	height: 58px;
+	position: absolute;
+	bottom: 50px;
+	opacity: .5
+}
+
+#galleryPrev {
+	background-image: url("../images/icons/prev.png");
+	left: 80px;
+}
+
+#galleryNext {
+	background-image: url("../images/icons/next.png");
+	right: 80px;
+}
+
+#game {
+	display: none;
+	width: 285px;
+	height: 502px;
+	background: -webkit-gradient(linear, left top, left bottom, from($basicColor), to(lightgrey));
+	background: -o-linear-gradient($basicColor, lightgrey);
+	background: linear-gradient($basicColor, lightgrey)
+}
+
+#calculator {
+	display: none;
+	width: 285px;
+	height: 502px;
+	background-color: $basicColor;
+	font-family: Arial
+}
+
+#calcDisplay {
+	width: 280px;
+	height: 182px;
+	line-height: 300px;
+	text-align: right;
+	font-size: 30px;
+	margin-right: 5px
+}
+
+#calcContainer {
+	width: 285px;
+	height: 320px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	margin-left: 3px
+}
+
+.calcButton {
+	text-align: center;
+	width: 65px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #d6d6d6;
+	border: 1px solid darkgrey;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+#calc0, #calcResult {
+	width: 134px
+}
+
+#notes {
+	background: #F4F1DF
+}
+
+.note {
+	font-family: Caveat Brush;
+	width: 285px;
+	height: 40px;
+	background-color: #fffae2;
+	border-bottom: 1px solid #ddd9c3;
+	p {
+		font-size: 20px;
+		line-height: 40px;
+		padding-left: 5px;
+		float: left
+	};
+	.noteDate {
+		float: right;
+		line-height: 40px;
+		color: #918e7e;
+		padding-right: 5px;
+		font-size: 20px
+	}
+}
+
+.noteDelete {
+	width: 30px;
+	height: 30px;
+	float: right;
+	background-color: red;
+	margin-right: 10px;
+	margin-top: 5px
+}
+
+#notesContainer {
+	width: 285px;
+	height: 430px;
+}
+
+.noteFull {
+	width: 285px;
+	height: 430px;
+	position: absolute;
+	top: 50px;
+	background-color: #F4F1DF;
+	textarea {
+		width: 265px;
+		height: 375px;
+		margin: 8px;
+		background-image: url("../images/other/note.png");
+		font-family: Caveat Brush;
+		font-size: 19px;
+		resize: none;
+		overflow: hidden
+	};
+	p {
+		color: #918e7e;
+		padding: 6px 0 0 8px;
+		font-family: Caveat Brush
+	}
+}
+
+#notesHeader {
+	width: 285px;
+	height: 50px;
+	background-color: #F4EDC3;
+	border-bottom: 1px solid #ddd9c3;
+	h1 {
+		padding-left: 70px;
+		line-height: 50px
+	};
+	#notesAdd {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 10px;
+		top: 0;
+		background: url("../images/icons/notesAdd.png") no-repeat center center
+	}
+}
+
+#snake {
+	display: none;
+	width: 285px;
+	height: 502px;
+	background: lightgreen;
+	font-family: Arial;
+	p {
+		font-size: 20px;
+		margin-left: 11px;
+		float: left
+	}
+}
+
+#snakeGame {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 285px;
+	height: 502px;
+	background-color: lightgreen
+}
+
+#snakeCanvas {
+	width: 260px;
+	height: 380px;
+	background-color: lightgrey;
+	margin: 20px 11px 11px 11px
+}
+
+#snakeImage {
+	width: 285px;
+	height: 280px;
+	background-image: url("../images/snake/snake.png");
+}
+
+#snakeSettingsMenu {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 285px;
+	height: 502px;
+	background: lightgreen;
+	h1 {
+		padding-top: 25px;
+		width: 285px;
+		text-align: center;
+	};
+	h2 {
+		width: 150px;
+		height: 30px;
+		margin-left: 5px;
+	};
+	h3 {
+		margin-top: 6px;
+		margin-left: 40px
+	}
+}
+
+.snakeDif {
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	float: left;
+	margin: 6px 0 0 5px;
+}
+
+#snakeMedium {
+	background-color: red
+}
+
+#snakePlay, #snakeSettings {
+	width: 220px;
+	height: 50px;
+	background-color: green;
+	border: 2px solid black;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+	font-size: 30px;
+	line-height: 50px
+}
+#snakeControls {
+	float: right;
+	margin-right: 15px
+}
+
+#snakeLeft, #snakeRight {
+	width: 30px;
+	height: 62px;
+	background-color: red;
+	float: left;
+	border: 1px solid black;
+}
+
+#snakeUpDown {
+	width: 52px;
+	height: 62px;
+	float: left;
+	div {
+		background-color: blue;
+		width: 50px;
+		height: 30px;
+		border: 1px solid black
+	}
+}
+
+#snakeEnd {
+	display: none;
+	position: absolute;
+	left: 31px;
+	top: 80px;
+	width: 220px;
+	height: 180px;
+	background-color: black;
+	opacity: .8;
+	color: white;
+	text-align: center;
+	h1 {
+		margin-top: 10px;
+		opacity: 1
+	};
+	p {
+		position: absolute;
+		width: 220px;
+		margin-top: -10px;
+		opacity: 1
+	}
+}
+
+.snakeBtnEnd {
+	width: 200px;
+	height: 30px;
+	margin: auto;
+	border: 1px solid white;
+	text-align: center;
+	margin-top: 10px;
+	line-height: 30px;
+	opacity: 1
+}
+
+#snakeEndBtns {
+	margin-top: 20px
+}

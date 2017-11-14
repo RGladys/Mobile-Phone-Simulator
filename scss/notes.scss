@@ -1,0 +1,81 @@
+#notes {
+	background: #F4F1DF
+}
+
+.note {
+	font-family: Caveat Brush;
+	width: 285px;
+	height: 40px;
+	background-color: #fffae2;
+	border-bottom: 1px solid #ddd9c3;
+	p {
+		font-size: 20px;
+		line-height: 40px;
+		padding-left: 5px;
+		float: left
+	};
+	.noteDate {
+		float: right;
+		line-height: 40px;
+		color: #918e7e;
+		padding-right: 5px;
+		font-size: 20px
+	}
+}
+
+.noteDelete {
+	width: 30px;
+	height: 30px;
+	float: right;
+	border-radius: 3px;
+	background-image: url("../images/icons/notesDelete.png");
+	margin-right: 10px;
+	margin-top: 5px
+}
+
+#notesContainer {
+	width: 285px;
+	height: 430px;
+}
+
+.noteFull {
+	width: 285px;
+	height: 430px;
+	position: absolute;
+	top: 50px;
+	background-color: #F4F1DF;
+	textarea {
+		width: 265px;
+		height: 375px;
+		margin: 8px;
+		background-image: url("../images/other/note.png");
+		font-family: Caveat Brush;
+		font-size: 19px;
+		resize: none;
+		overflow: hidden
+	};
+	p {
+		color: #918e7e;
+		padding: 6px 0 0 8px;
+		font-family: Caveat Brush
+	}
+}
+
+#notesHeader {
+	width: 285px;
+	height: 50px;
+	background-color: #F4EDC3;
+	border-bottom: 1px solid #ddd9c3;
+	h1 {
+		padding-left: 70px;
+		line-height: 50px
+	};
+	#notesAdd {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 10px;
+		top: 0;
+		background: url("../images/icons/notesAdd.png") no-repeat center center
+	}
+}

@@ -1,0 +1,66 @@
+.settingsMain {
+	font-size: 22px;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	margin: 10px 0 0 4px;
+	border-radius: 15px;
+	border: 2px solid darken($basicColor, 70%);
+	background-color: lighten($basicColor, 5%);
+}
+
+.settingsInnerMain {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 285px;
+	height: 502px;
+	background: linear-gradient($basicColor, darken($basicColor, 20%));
+}
+
+#settingsBgPhoto {
+	display: none;
+	width: 285px;
+	height: 502px;
+	position: absolute;
+	top: 0;
+	background-color: black
+}
+
+#settingsBgSet1, #settingsBgSet2 {
+	position: absolute;
+	background-color: $basicColor;
+	width: 240px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 15px;
+	opacity: .75;
+	left: 22px;
+	text-align: center;
+	font-size: 16px
+}
+
+#settingsBgSet1 {
+	bottom: 90px;
+}
+
+#settingsBgSet2 {
+	bottom: 50px;
+}
+
+.settingsSound {
+	font-size: 16px;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	margin: 10px 0 0 4px;
+	border-radius: 15px;
+	border: 2px solid darken($basicColor, 70%);
+	background-color: lighten($basicColor, 5%);
+}
+
+#settingsSoundRing {
+	background: #c9efd9
+}

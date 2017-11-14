@@ -1,0 +1,101 @@
+* {
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+}
+
+$basicColor: #ebebeb;
+
+#screen {
+	width: 285px;
+	height: 502px;
+	background-color: black;
+	font-size: 20px;
+	margin:0;
+	padding:0;
+	position: absolute
+}
+
+#bar {
+	display: none;
+	width: 285px;
+	height: 25px;
+	background-color: black;
+	position: absolute;
+	z-index: 100000000000;
+	p {
+		font-family: "Libre Franklin";
+		font-size: 15px;
+		color: white;
+		line-height: 15px;
+		margin-right: 10px;
+		margin-top: 9px;
+		float: right
+	};
+	#barStats {
+		width: 64px;
+		height: 25px;
+		float: right;
+		background-image: url('../images/other/bar.png');
+	};
+	#msg {
+		display: none;
+		float: left;
+		width: 32px;
+		height: 25px;
+		background-image: url('../images/other/msg.png');
+	}
+}
+
+#start {
+	width: 285px;
+	height: 502px;
+	position: absolute;
+	display: none;
+	overflow: none;
+	background-color: black;
+	background-image: url("../images/pictures/picture1.png");
+	z-index: 2
+}
+
+#startSVG {
+	position: absolute;
+	width: 285px;
+	height: 502px
+}
+
+#startClock {
+	position: absolute;
+	font-family: "Open Sans Condensed";
+	color: white;
+	h1 {
+		margin-top: 10px;
+		margin-left: 15px;
+		font-size: 100px;
+	};
+	p {
+		margin-top: -20px;
+		margin-left: 20px;
+		font-size: 25px
+	}
+}
+
+#startInfo {
+	position: absolute;
+	font-family: "Open Sans Condensed";
+	color: white;
+	font-size: 20px;
+	bottom: 30px;
+	left: 15px;
+	animation: startAnim 2s infinite
+}
+
+@keyframes startAnim {
+	0% {color: white}
+	50% {color: #bcbcbc}
+	100% {color: white}
+}
